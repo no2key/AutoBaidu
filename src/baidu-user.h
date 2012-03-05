@@ -18,6 +18,8 @@ typedef struct _BaiduUserClass	BaiduUserClass;
 
 struct _BaiduUser {
 	GObject parent;
+	GString *name;
+	GString *passwd;
 };
 
 struct _BaiduUserClass {
@@ -29,5 +31,14 @@ GType baidu_user_get_type(void);
 BaiduUser *baidu_user_new(const gchar *name, const gchar *passwd);
 
 void baidu_user_say_hello(BaiduUser *user);
+
+void baidu_user_is_login(BaiduUser *user);
+void baidu_user_login(BaiduUser *user);
+
+void baidu_user_reply(BaiduUser *user);
+void baidu_user_post(BaiduUser *user);
+
+void baidu_user_get_verify_code(BaiduUser *user);
+
 
 #endif /* __BAIDU_USER_H */

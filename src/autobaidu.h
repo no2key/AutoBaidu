@@ -12,4 +12,5 @@
 #define IMG_URL "http://tieba.baidu.com/cgi-bin/genimg?%s"
 
 
+
 #endif /* AUTO_BAIDU_H */
