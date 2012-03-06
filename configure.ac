@@ -15,24 +15,26 @@ AC_PROG_INSTALL
 
 # check for libs
 
-PKG_CHECK_MODULES(GLIB, [glib-2.0 >= 2.18], [
-		AC_DEFINE(USE_GLIB, 1, [Use GLIB])
-		AC_SUBST(GLIB_CFLAGS)
-		AC_SUBST(GLIB_LIBS)
-		] ,
-		)
-PKG_CHECK_MODULES(GOBJECT, [gobject-2.0], [
-		  AC_DEFINE(USE_GOBJECT, 1, [Use GOBJECT])
-		  AC_SUBST(GOBJECT_CFLAGS)
-		  AC_SUBST(GOBJECT_LIBS)
-		  ] ,
-		  )
+# check for glib
+PKG_CHECK_MODULES(GLIB, [glib-2.0 >= 2.18])
+AC_SUBST(GLIB_LIBS)
+AC_SUBST(GLIB_CFLAGS)
+
+# check for gobject
+PKG_CHECK_MODULES(GOBJECT, [gobject-2.0])
+AC_SUBST(GOBJECT_CFLAGS)
+AC_SUBST(GOBJECT_LIBS)
+
+# check for libsoup
+PKG_CHECK_MODULES(LIBSOUP, [libsoup-2.4 >= 2.26])
+AC_SUBST(LIBSOUP_CFLAGS)
+AC_SUBST(LIBSOUP_LIBS)
 
 
+# config files
 AC_CONFIG_FILES([
 		 Makefile
 		 src/Makefile
-		 src/test/Makefile]
 		)
 
 AC_OUTPUT

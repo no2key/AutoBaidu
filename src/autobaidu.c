@@ -1,3 +1,11 @@
+/**
+ * AutoBaidu is a simple program for baidu tieba.
+ *
+ * Author crab <7723n12@sina.com>
+ */
+
+
+
 #include <stdlib.h>
 #include <glib.h>
 #include <config.h>
@@ -46,11 +54,8 @@ gint main(gint argc, gchar **argv)
 	}
 	g_option_context_free(context);
 
-	
 	/* initialization */
 	g_type_init();
-	
-	
 	
 	/* test */
 	BaiduUser *user;

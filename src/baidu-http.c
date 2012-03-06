@@ -10,5 +10,3 @@ void request_add_header(Request *req, const gchar *name, const gchar *value)
 	GString *v = g_string_new(value);
 	g_tree_insert(req->headers, k, v);
 }
-
-

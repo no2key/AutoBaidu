@@ -1,25 +1,18 @@
+/* The main interface for network.Base on libsoup. */
+
 #ifndef __BAIDU_HTTP_H
 #define __BAIDU_HTTP_H
 
+#include <glib.h>
+#include <libsoup/soup.h>
+#include <config.h>
 
-typedef struct {
-	GString *version;
-	GString *status;
-	GString *reson;
+#include "baidu-user.h"
 
-	GTree *headers;
-	GString *msg;
-} Response;
+/* use asynchronous session for multiuser */
 
 
-typedef struct {
-	GString *method;
-	GString *uri;
-	GString *version;
 
-	GTree *headers;
-	GString *msg;
-} Request;
 
 Request *request_new();
 void request_delete();

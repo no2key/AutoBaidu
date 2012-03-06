@@ -2,6 +2,7 @@
 #define __BAIDU_USER_H
 
 #include <glib-object.h>
+#include <libsoup/soup.h>
 
 #define BAIDU_USER(obj)		G_TYPE_CHECK_INSTANCE_CAST(obj, \
 					baidu_user_get_type(), BaiduUser)
@@ -20,6 +21,9 @@ struct _BaiduUser {
 	GObject parent;
 	GString *name;
 	GString *passwd;
+
+	SoupSession *session;
+
 };
 
 struct _BaiduUserClass {
@@ -32,7 +36,7 @@ BaiduUser *baidu_user_new(const gchar *name, const gchar *passwd);
 
 void baidu_user_say_hello(BaiduUser *user);
 
-void baidu_user_is_login(BaiduUser *user);
+gboolean baidu_user_is_login(BaiduUser *user);
 void baidu_user_login(BaiduUser *user);
 
 void baidu_user_reply(BaiduUser *user);

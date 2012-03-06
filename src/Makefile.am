@@ -1,4 +1,4 @@
-SUBDIRS = test
+#SUBDIRS = test
 
 
 AM_CFLAGS = $(GLIB_CFLAGS) $(GOBJECT_CFLAGS) -Wall 
